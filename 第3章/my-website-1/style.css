@@ -1,0 +1,75 @@
+/* ページ全体 */
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: #F1F8E9;
+    color: #1A1A1A;
+    line-height: 1.8;
+    margin: 0; /* ブラウザが最初から持っている標準の余白を消すため */
+    padding: 0; /* 今回はグループ（div）ごとに余白を設定するため、body全体の余白は0にします */
+}
+
+/* プロフィールヘッダー */
+#profile-header {
+    background-color: #2E7D32;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 28px;
+    text-align: center;
+    border-bottom: 3px solid #4CAF50;  /* 下に緑の実線を追加 */
+    padding-bottom: 16px;              /* 文字と下線の間にpaddingを追加 */
+    margin-bottom: 30px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #C8E6C9;
+    margin: 0;
+}
+
+/* プロフィール本文 */
+#profile-body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h2 {
+    color: #2E7D32;
+    font-size: 22px;
+    border-bottom: 2px solid #A5D6A7; /* 線の太さ(2px) 線の種類(solid:実線) 色 */
+    padding-bottom: 8px;
+    margin-top: 40px;      /* h2の上に40pxの余白 */
+    margin-bottom: 16px;   /* h2の下に16pxの余白 */
+}
+
+p {
+    font-size: 16px;
+    color: #37474F;
+    line-height: 1.8;
+    margin-bottom: 16px;   /* 段落の下に16px の外余白 *//
+}
+
+ul {
+    padding-left: 24px;
+}
+
+li {
+    font-size: 16px;
+    color: #37474F;
+    margin-bottom: 8px;
+}
+
+a {
+    color: #1565C0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0D47A1;
+    text-decoration: underline;
+}

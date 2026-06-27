@@ -1,0 +1,31 @@
+/* Flexコンテナ（親要素）の設定 */
+.flex-container {
+    display: flex;               /* これだけで子要素が横に並ぶ！ */
+    justify-content: space-between;  /* ← いろいろな値に変えて確認しよう */
+    align-items: center;  /* 縦方向の中央揃え */
+    flex-wrap: wrap;     /* 折り返しを有効にする */
+    gap: 16px;           /* アイテム間の間隔（後述） */
+    height: 200px;        /* 高さを指定しないと効果がわかりにくい */
+    background-color: #E8F5E9;
+    padding: 16px;
+}
+
+/* Flexアイテム（子要素）の設定 */
+.flex-item {
+    background-color: #2E7D32;
+    color: white;
+    padding: 20px;    
+    border-radius: 4px;
+    flex-basis: 200px;  /* 基本幅を200pxとする */
+}
+
+.flex-item:nth-of-type(1) {
+    flex-grow:1; 
+    background:yellowgreen;
+}
+
+.flex-item:nth-of-type(3) {
+    flex-grow:2;
+    background: orange;
+}
+

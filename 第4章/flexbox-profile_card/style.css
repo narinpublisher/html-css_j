@@ -1,0 +1,134 @@
+
+/* ===== リセット・基本設定（第3章から引き継ぐ）===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== 全体のbody設定 ===== */
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: #F1F8E9;
+    color: #1A1A1A;
+    line-height: 1.8;
+    padding: 40px;
+}
+
+/* ===== ナビゲーションメニュー ===== */
+.main-nav {
+    background-color: #2E7D32;
+    padding: 0 20px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+}
+
+.nav-list {
+    display: flex;           /* リストを横並びに */
+    list-style: none;        /* デフォルトの黒点を消す */
+    gap: 0;
+}
+
+.nav-list li a {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;   /* リンクの下線を消す */
+    padding: 14px 20px;
+    font-size: 15px;
+    transition: background-color 0.2s;  /* ホバー時にアニメーション */
+}
+
+.nav-list li a:hover {
+    background-color: #4CAF50;  /* マウスを乗せると色が変わる */
+}
+
+/* ===== ページタイトル（h1）===== */
+h1 {
+    color: #2E7D32;
+    font-size: 28px;
+    text-align: center;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+/* ===== プロフィールカード全体（Flexコンテナ）===== */
+.profile-card {
+    display: flex;           /* Flexboxを有効にする！ */
+    align-items: center;     /* 縦方向：中央揃え */
+    gap: 40px;               /* 写真とテキストの間隔 */
+    background-color: #FFFFFF;
+    border: 1px solid #C8E6C9;
+    border-top: 4px solid #2E7D32;
+    border-radius: 8px;
+    padding: 32px;
+    max-width: 720px;        /* カードの最大幅 */
+    margin: 0 auto;          /* 中央寄せ */
+}
+
+
+/* ===== 左側：写真エリア（Flexアイテム）===== */
+.profile-photo {
+    flex-shrink: 0;          /* 写真は縮まないように固定 */
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;      /* 丸いプロフィール写真に */
+    object-fit: cover;       /* 縦横比を保ってトリミング */
+    border: 4px solid #4CAF50;
+    display: block;
+}
+
+/* ===== 右側：テキストエリア（Flexアイテム）===== */
+.profile-info {
+    flex: 1;                 /* 残りの幅をすべて使う */
+}
+
+.profile-info h2 {
+    font-size: 26px;
+    color: #2E7D32;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    font-size: 15px;
+    color: #37474F;
+    margin-bottom: 16px;
+    border-left: 3px solid #4CAF50;
+    padding-left: 12px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    font-size: 15px;
+    color: #37474F;
+    padding: 4px 0;
+}
+
+.skill-list li::before {
+    content: "✅ ";
+}
+
+/* スマートフォン対応（画面幅600px以下のとき） */
+@media (max-width: 600px) {
+    .profile-card {
+        flex-direction: column;  /* 縦並びに切り替え */
+        text-align: center;
+        padding: 24px;
+    }
+    .profile-photo img {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;          /* 写真を中央揃え */
+    }
+    .tagline {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+

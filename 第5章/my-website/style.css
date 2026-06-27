@@ -1,0 +1,164 @@
+/* ===== リセット・基本設定 ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    background-color: #F1F8E9;
+    color: #1A1A1A;
+    line-height: 1.8;
+    /* 注意：ここで padding: 40px; などを設定している場合は削除する */
+}
+
+/* ===== サイトヘッダー全体 ===== */
+.site-header {
+    background-color: #2E7D32;      /* ヘッダーの背景色（濃い緑） */
+    position: sticky;               /* スクロールしても上に固定 */
+    top: 0;                         /* 画面の一番上に固定する */
+    z-index: 1;                   /*要素が重なるときに積み重なる順序で、1は0より上に積み上げられる */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  /* 影をつけて立体感を出す */
+}
+
+/* ===== ヘッダー内部（サイトタイトル＋ナビを横並びに） ===== */
+.header-inner {
+    display: flex;                  /* Flexboxで横並びに */
+    align-items: center;            /* 縦方向に中央揃え */
+    justify-content: space-between; /* 左右に振り分ける */
+    max-width: 960px;               /* 最大幅を設定 */
+    margin: 0 auto;                 /* 中央寄せ */
+    padding: 0 24px;                /* 左右の内側余白 */
+}
+
+/* ===== サイトタイトル（ロゴ部分） ===== */
+.site-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.site-title a {
+    color: #FFFFFF;                 /* 白い文字 */
+    text-decoration: none;          /* 下線を消す */
+}
+
+.site-title a:hover {
+    color: #A5D6A7;                 /* ホバーで薄い緑に変わる */
+}
+
+/* ===== ナビゲーションリスト ===== */
+.nav-list {
+    display: flex;                  /* リストを横並びに */
+    list-style: none;               /* 黒点を消す */
+    gap: 4px;                       /* リスト項目の間隔 */
+}
+
+/* ===== 各ナビリンク ===== */
+.nav-list a {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 16px 18px;             /* 上下16px・左右18pxの余白 */
+    font-size: 15px;
+    border-radius: 4px;
+    transition: background-color 0.2s;  /* ホバー時のアニメーション */
+}
+
+/* ===== ホバー時のスタイル ===== */
+.nav-list a:hover {
+    background-color: #4CAF50;      /* マウスを乗せると明るい緑に */
+}
+
+/* ===== 現在のページのスタイル（active クラス） ===== */
+.nav-list a.active {
+    background-color: #4CAF50;      /* 現在のページも明るい緑 */
+    font-weight: bold;              /* 現在ページのリンクを太字に */
+}
+
+/* ===== メインコンテンツエリア ===== */
+.main-content {
+    max-width: 960px;               /* コンテンツの最大幅 */
+    margin: 0 auto;                 /* 中央寄せ */
+    padding: 40px 24px;             /* 上下40px・左右24pxの余白 */
+}
+
+/* ===== ページタイトル（h1） ===== */
+.main-content h1 {
+    color: #2E7D32;
+    font-size: 28px;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 12px;
+    margin-bottom: 32px;
+}
+
+/* ===== 作品集グリッド（Flexboxで横並び） ===== */
+.works-grid {
+    display: flex;                  /* Flexboxで横並びに */
+    flex-wrap: wrap;                /* 幅が足りなければ折り返す */
+    gap: 24px;                      /* カード間の間隔 */
+    margin-top: 24px;
+}
+
+/* ===== 作品カード（個別のカード） ===== */
+.work-card {
+    flex: 1 1 260px;                /* 最小260px。余裕があれば広がる */
+    background-color: #FFFFFF;
+    border: 1px solid #C8E6C9;
+    border-top: 4px solid #4CAF50;  /* 上部に緑のアクセントライン */
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);  /* 軽い影 */
+    transition: box-shadow 0.2s;    /* ホバー時のアニメーション用 */
+}
+
+/* ===== カードのホバー時：影を強調 ===== */
+.work-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== カード内の見出し ===== */
+.work-card h3 {
+    font-size: 18px;
+    color: #2E7D32;
+    margin-bottom: 12px;
+}
+
+/* ===== カード内のテキスト ===== */
+.work-card p {
+    font-size: 14px;
+    color: #37474F;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+/* ===== 作品リンクボタン ===== */
+.work-link {
+    display: inline-block;          /* ブロックのように余白を設定 */
+    color: #2E7D32;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #4CAF50;
+    border-radius: 4px;
+    padding: 6px 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* ===== 作品リンクボタンのホバー時 ===== */
+.work-link:hover {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+}
+
+
+/* ===== サイトフッター ===== */
+.site-footer {
+    background-color: #2E7D32;      /* ヘッダーと同じ濃い緑 */
+    color: #A5D6A7;                 /* 薄い緑色のテキスト */
+    text-align: center;             /* テキストを中央揃え */
+    padding: 20px;                  /* 上下左右の内側余白 */
+    font-size: 14px;                /* 少し小さめの文字サイズ */
+    margin-top: 60px;               /* コンテンツとフッターの間隔 */
+}
+
